@@ -1,0 +1,43 @@
+body {
+  font-family: verdana; }
+
+h1 {
+  margin-top: 0px; }
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+  border: solid 2px black; }
+
+#happy-face {
+  width: 100px;
+  height: 100px;
+  float: left;
+  border-right: solid 2px black; }
+
+#logo {
+  height: 50px; }
+
+.heading-box .heading {
+  text-align: center;
+  border-bottom: solid 2px black;
+  height: 100px; }
+
+.input-box {
+  text-align: center;
+  height: 160px;
+  border-bottom: solid 1px black; }
+  .input-box h3 {
+    margin-left: 30px;
+    text-align: left; }
+  .input-box .input-wrapper {
+    float: left;
+    margin: 5px 10px;
+    width: 30%; }
+
+.story-box {
+  padding: 20px; }
+
+.gameword {
+  min-width: 40px;
+  border-bottom: solid 1px black; }

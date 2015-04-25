@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+  <title>ngMadLibs</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js" type="text/javascript"></script>
+</head>
+<body ng-init="orderedWords = ['name','dirty','obnoxious','job','celeb','huge','task','skill','adjective']; 
+               words = {
+                         'name':{'value':'', 'holder':'female name','size':11},
+                         'dirty':{'value':'', 'holder':'Dirty task', 'size':8},
+                         'obnoxious':{'value':'', 'holder':'Obnoxious celebrity', 'size':17},
+                         'job':{'value':'', 'holder':'Job title', 'size': 7},
+                         'celeb':{'value':'', 'holder':'Celebrity', 'size': 8},
+                         'huge':{'value':'', 'holder':'Huge number', 'size': 11},
+                         'task':{'value':'', 'holder':'Tedious task', 'size': 12},
+                         'skill':{'value':'', 'holder':'Useless skill', 'size': 11},
+                         'adjective':{'value':'', 'holder':'Adjective', 'size': 8}
+                       };">
+
+<div class="container">
+
+  <div class="heading-box">
+    <img src="img/mad-lib-happy-face.png" alt="" id="happy-face">
+    <div class="heading">
+      <img src="img/ng-mad-libs-logo.png" alt="" id="logo">
+      <h1>Automate This!</h1>
+    </div>
+  </div>
+
+  <div class="input-box">
+    <h3>Provide the following words:</h3>
+    <div class="input-wrapper" ng-repeat="word in orderedWords">
+      <input type="text" ng-model="words[word].value" size="{{words[word].size}}" placeholder="{{words[word].holder}}">
+    </div>
+  </div>
+
+  <div class="story-box">
+    <p>
+      <span class="gameword"><span ng-if="words.name.value==''">{{<!>{{words.name.holder}}<!>}}</span>{{words.name.value}}</span> 
+      was a(n) 
+      <span class="gameword"><span ng-if="words.job.value==''">{{<!>{{words.job.holder}}<!>}}</span>{{words.job.value}}</span> 
+      who loved technology. Although she loved parts of her job, she absolutely hated  
+      <span class="gameword"><span ng-if="words.task.value==''">{{<!>{{words.task.holder}}<!>}}</span>{{words.task.value}}</span> 
+      and 
+      <span class="gameword"><span ng-if="words.dirty.value==''">{{<!>{{words.dirty.holder}}<!>}}</span>{{words.dirty.value}}</span>.
+      So, 
+      <span class="gameword"><span ng-if="words.name.value==''">{{<!>{{words.name.holder}}<!>}}</span>{{words.name.value}}</span>
+      met with her life mentor 
+      <span class="gameword"><span ng-if="words.celeb.value==''">{{<!>{{words.celeb.holder}}<!>}}</span>{{words.celeb.value}}</span> who told her to learn how to 
+      <span class="gameword"><span ng-if="words.skill.value==''">{{<!>{{words.skill.holder}}<!>}}</span>{{words.skill.value}}</span>
+      with Thinkful. Thinkful didn't offer a course on 
+      <span class="gameword"><span ng-if="words.skill.value==''">{{<!>{{words.skill.holder}}<!>}}</span>{{words.skill.value}}</span> so she studied programming instead. 
+    </p>
+    <p>
+      What a great decision! With her new skills, 
+      <span class="gameword"><span ng-if="words.name.value==''">{{<!>{{words.name.holder}}<!>}}</span>{{words.name.value}}</span> 
+      built a(n) 
+      <span class="gameword"><span ng-if="words.adjective.value==''">{{<!>{{words.adjective.holder}}<!>}}</span>{{words.adjective.value}}</span>
+      robot named 
+      <span class="gameword"><span ng-if="words.obnoxious.value==''">{{<!>{{words.obnoxious.holder}}<!>}}</span>{{words.obnoxious.value}}</span>
+      that not only loved 
+      <span class="gameword"><span ng-if="words.dirty.value==''">{{<!>{{words.dirty.holder}}<!>}}</span>{{words.dirty.value}}</span>
+      but did it
+      <span class="gameword"><span ng-if="words.huge.value==''">{{<!>{{words.huge.holder}}<!>}}</span>{{words.huge.value}}</span> 
+      faster. 
+    </p>
+  </div>
+
+</div>
+</body>
+
+ 
+</html>
