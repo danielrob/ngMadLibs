@@ -21,33 +21,43 @@
 
   <div class="input-box" ng-show="!tellStory" >
     <h3>Provide the following words:</h3>
-    <form name="wordInput" ng-submit="tellStory = !tellStory" required>    
+    <form name="wordInput" ng-submit="submitWords()" required novalidate>    
       <div class="input-wrapper">
          <input name="name" ng-model="words.name" placeholder="female name" size="11" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.name.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="dirty" ng-model="words.dirty" placeholder="Dirty task" size="8" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.dirty.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="obnoxious" ng-model="words.obnoxious" placeholder="Obnoxious celebrity" size="17" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.obnoxious.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="job" ng-model="words.job" placeholder="Job title" size="7" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.job.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="celeb" ng-model="words.celeb" placeholder="Celebrity" size="8" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.celeb.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="huge" ng-model="words.huge" placeholder="Huge number" size="7" type="number" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.huge.$error.required)">Me too!</span>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.huge.$error.number)">NaN!</span>
       </div>
       <div class="input-wrapper">
          <input name="task" ng-model="words.task" placeholder="Tedious task" size="12" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.task.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="skill" ng-model="words.skill" placeholder="Useless skill" size="11" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.skill.$error.required)">Me too!</span>
       </div>
       <div class="input-wrapper">
          <input name="adjective" ng-model="words.adjective" placeholder="Adjective" size="8" type="text" required>
+         <span class="error" ng-if="(wordInput.$submitted && wordInput.adjective.$error.required)">Me too!</span>
       </div>             
       <input type="submit" value="Generate My Mad Lib" >
      </form>
@@ -57,14 +67,13 @@
     <p>
     <span class="gameword">{{words.name}}</span> was a(n) <span class="gameword">{{words.job}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span class="gameword">{{words.task}}</span> and <span class="gameword">{{words.dirty}}</span>. So, <span class="gameword">{{words.name}}</span> met with her life mentor <span class="gameword">{{words.celeb}}</span> who told her to learn how to <span class="gameword">{{words.skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="gameword">{{words.skill}}</span> so she studied programming instead. 
   </p>
+  <p>
     What a great decision! With her new skills, <span class="gameword">{{words.name}}</span> built a(n) <span class="gameword">{{words.adjective}}</span> robot named <span class="gameword">{{words.obnoxious}}</span> that not only loved <span class="gameword">{{words.dirty}}</span> but did it <span class="gameword">{{words.huge}}</span> faster. 
-   <p>
-    <button ng-click="emptyWordsAndAskForInput()">Change words</button>
+  </p>   
+    <p><button ng-click="reset()">Change words</button></p>
   </div>
 
 </div>
-<!-- <pre>{{wordInput | json}}</pre> -->
-
 </body>
 
  
