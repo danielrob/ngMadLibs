@@ -1,4 +1,4 @@
-var ngMadLib = angular.module('ngMadLib', [])
+var ngMadLib = angular.module('ngMadLib', ['ngAnimate'])
   
 ngMadLib.controller('madLibsController', function($scope) {
   var words = {
@@ -15,7 +15,6 @@ ngMadLib.controller('madLibsController', function($scope) {
 
   $scope.words = words;
   $scope.tellStory = false;
-
 
   $scope.submitWords = function(){
     if (isEmpty($scope.wordInput.$error)){
